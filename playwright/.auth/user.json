@@ -5,7 +5,7 @@
       "value": "true",
       "domain": "demo-bank.vercel.app",
       "path": "/",
-      "expires": 1699450433,
+      "expires": 1699609453,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
