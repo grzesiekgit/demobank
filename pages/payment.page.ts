@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { Date, DateHelper } from "../helpers/date.helper";
+import { DateHelper } from "../helpers/date.helper";
 
 export class PaymentPage {
   constructor(private page: Page) {}
@@ -36,12 +36,10 @@ export class PaymentPage {
 
   async fillReceiver(receiver: string) {
     await this.receiver.fill(receiver);
-    return this;
   }
 
   async fillAccountNumber(accountNumber: string) {
     await this.accountNumber.fill(accountNumber);
-    return this;
   }
 
   async fillAdditionalAddress(
@@ -101,4 +99,6 @@ export class PaymentPage {
     await this.emailConfirmationFlag.check();
     await this.emailConfirmationInput.fill(email);
   }
+
+
 }
