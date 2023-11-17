@@ -1,0 +1,23 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- checkout: self
+  displayName: 'checkout repo'
+
+- script: |
+    npm install
+    npx playwright install
+    npx playwright test 
+  displayName: 'Run tests'
+
+- task: PublishBuildArtifacts@1
+  condition: succeededOrFailed()
+  inputs:
+    PathToPublish: "$(System.DefaultWorkingDirectory)/test-results"
+    ArtifactName: "TestResults"
+  displayName: 'Results'
